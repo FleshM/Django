@@ -7,19 +7,50 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{% static "/css/main.css" %}" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,&display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
     <title>Web-разработчик</title>
-     <link rel="icon" type="image/png" sizes="16x16" href="{% static "img/favicon-16x16.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "img/favicon-16x16.png" %}">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <a class="logo" href=#>
-                <img src="{% static "img/logo.png" %}" alt="Логотип">
+            <a class="header__a" href=#>
+                <img class="header__logo" src="{% static "img/logo.png" %}" alt="Логотип">
                 <h1>Web-разработчик</h1>
             </a>
         </div>
     </header>
+    <main class="container">
+        <ul class="navigation">
+            <li class="current"><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'demand' %}">Востребованность</a></li>
+            <li><a href="{% url 'geography' %}">География</a></li>
+            <li><a href="">Навыки</a></li>
+            <li><a href="">Последние вакансии</a></li>
+        </ul>
+        <div class="main-page">
+            <div class="main-page__wrapper">
+                <h2>О профессии</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
+                <img src="{% static "img/test.jpg" %}" alt="Иллюстрация программиста">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
+
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <p>Плешивцев Денис Владимирович<br>РИ-210948</p>
+                <div class="footer__contacts">
+                    <a href="https://github.com/FleshM/Django" target="_blank"><img class="header__logo" src="{% static "img/ghlogo.svg" %}" alt="GitHub"></a>
+                    <a href="https://t.me/flesshit" target="_blank"><img class="header__logo" src="{% static "img/tglogo.svg" %}" alt="Telegram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

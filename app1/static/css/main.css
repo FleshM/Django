@@ -1,3 +1,9 @@
+@import "header.css";
+@import "navigation.css";
+@import "main-page.css";
+@import "footer.css";
+
+
 * {
   box-sizing: border-box;
 }
@@ -26,6 +32,7 @@ p {
 }
 
 a {
+  outline: none;
   text-decoration: none;
 }
 
@@ -34,11 +41,7 @@ h1, h2, h3, h4 {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 10px
-}
-
-.logo {
-  display: inline-flex;
 }

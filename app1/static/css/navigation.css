@@ -1,0 +1,44 @@
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0 50px;
+  border-left: 5px solid #DAE4F1;
+  position: fixed;
+}
+.navigation li {
+  line-height: 3em;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  color: #4A4B4D;
+}
+
+.navigation a:hover {
+  color: #2CA2FD;
+}
+
+.navigation a:before {
+  content: "";
+  display: inline-block;
+  background: #DAE4F1;
+  width: 12px;
+  height: 12px;
+  left: -9px;
+  position: relative;
+  border-radius: 50%;
+  margin-right: .5em;
+}
+
+.navigation .visited a:before {
+  background: #2CA2FD;
+}
+
+.navigation .current a {
+  color: #2CA2FD;
+}
+
+.navigation .current a:before {
+  background: #2CA2FD;
+}

@@ -1,0 +1,21 @@
+.header__a {
+  padding: 20px;
+  color: #2CA2FD;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.header__a:hover {
+  opacity: 75%;
+}
+
+.header__logo {
+  height: 65px;
+}
+
+.header__a h1 {
+  margin-left: 20px;
+  font-weight: 500;
+}
+
