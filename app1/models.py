@@ -14,13 +14,15 @@ class Paragraph(models.Model):
         verbose_name_plural = 'Параграфы на Главной'
 
 
-class Profession(models.Model):
-    title = models.CharField('Название', max_length=50)
-    description = models.TextField('Описание')
+class DemandPage(models.Model):
+    title = models.CharField('Заголовок', max_length=50)
+    text = models.TextField('Текст', blank=True, null=True)
+    image = models.ImageField('Изображение', upload_to='images/', blank=True, null=True)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = 'Профессия'
-        verbose_name_plural = 'Профессии'
+        verbose_name = 'Параграф'
+        verbose_name_plural = 'Страница "Востребованность"'
+

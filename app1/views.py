@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app1.models import Paragraph
+from app1.models import Paragraph, DemandPage
 
 
 def index_page(request):
@@ -10,7 +10,10 @@ def index_page(request):
 
 
 def demand_page(request):
-    return render(request, 'demand.html')
+    data = {
+        'paragraphs': DemandPage.objects.all()
+    }
+    return render(request, 'demand.html', context=data)
 
 
 def geography_page(request):

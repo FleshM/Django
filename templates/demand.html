@@ -30,8 +30,16 @@
         </ul>
         <div class="main-content">
             <div class="main-content__wrapper">
-                <h2>Востребованность</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
+                {% block content %}
+                    {% for p in paragraphs %}
+                        <h2>{{ p.title }}</h2>
+                        {% if p.text|length > 1 %}
+                            {{ p.text|safe }}
+                        {% endif %}
+                        {% if p.image.url|length > 0 %}
+                            <img src="{{ p.image.url }}" alt="{{ p.title }}">
+                        {% endif %}
+                    {% endfor %}                {% endblock %}
             </div>
         </div>
     </main>

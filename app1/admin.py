@@ -1,7 +1,7 @@
 from django.contrib import admin
-from app1.models import Profession, Paragraph
+from app1.models import DemandPage, Paragraph
 
 
-admin.site.register(Profession)
 admin.site.register(Paragraph)
+admin.site.register(DemandPage)
 
