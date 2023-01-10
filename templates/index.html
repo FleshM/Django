@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <a class="header__a" href=#>
+            <a class="header__a" href="{% url 'index' %}">
                 <img class="header__logo" src="{% static "img/logo.png" %}" alt="Логотип">
                 <h1>Web-разработчик</h1>
             </a>
@@ -30,14 +30,17 @@
         </ul>
         <div class="main-page">
             <div class="main-page__wrapper">
-                <h2>О профессии</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
-                <img src="{% static "img/test.jpg" %}" alt="Иллюстрация программиста">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum ante turpis, in sagittis odio egestas vitae. Sed venenatis euismod magna, ut congue mauris euismod sit amet. Donec aliquam leo quis congue lobortis. Nulla facilisi. Fusce eu nibh egestas, mollis lacus sed, pulvinar turpis. Praesent tristique elit ante, sed finibus ligula bibendum nec. Etiam suscipit diam id ultricies venenatis. Mauris aliquam placerat lectus ut venenatis. Vestibulum id mauris ornare, pulvinar lorem id, ornare orci. Phasellus at tortor et quam dictum euismod.</p>
-
+               {% block content %}
+                    {% for p in paragraphs %}
+                        {% if p.title|length > 1 %}
+                            <h2>{{ p.title }}</h2>
+                        {% endif %}
+                        {{ p.text|safe }}
+                        {% if p.image.url|length > 0 %}
+                            <img src="{{ p.image.url }}" alt="{{ p.title }}">
+                        {% endif %}
+                    {% endfor %}
+                {% endblock %}
             </div>
         </div>
     </main>

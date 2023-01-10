@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import app1.views as view
+from django.conf import settings
 
 
 urlpatterns = [
@@ -24,3 +25,7 @@ urlpatterns = [
     path('demand/', view.demand_page, name='demand'),
     path('geography/', view.geography_page, name='geography')
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
