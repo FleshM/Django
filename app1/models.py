@@ -3,7 +3,7 @@ from django.db import models
 
 class Paragraph(models.Model):
     title = models.CharField('Заголовок', max_length=50, blank=True, null=True)
-    text = models.TextField('Текс')
+    text = models.TextField('Текст')
     image = models.ImageField('Изображение', upload_to='images/', blank=True, null=True)
 
     def __str__(self):
@@ -11,7 +11,7 @@ class Paragraph(models.Model):
 
     class Meta:
         verbose_name = 'Параграф'
-        verbose_name_plural = 'Параграфы'
+        verbose_name_plural = 'Параграфы на Главной'
 
 
 class Profession(models.Model):
