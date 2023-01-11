@@ -58,7 +58,7 @@ def generate_image():
     ax2.legend(fontsize=8)
     ax2.grid(axis='y', linestyle='-')
 
-    ax3.bar(x, p_name_salary_by_year.values(), 2 * width, label='Количество вакансий')
+    ax3.bar(x, p_name_vacancies_by_year.values(), 2 * width, label='Количество вакансий')
 
     ax3.set_title('Количество вакансий по годам - Web-разработчик')
     ax3.set_xticks(x, labels, rotation=90, fontsize=8)
