@@ -26,3 +26,18 @@ class DemandPage(models.Model):
         verbose_name = 'Параграф'
         verbose_name_plural = 'Страница "Востребованность"'
 
+
+class AnalyticsByYear(models.Model):
+    year = models.IntegerField('Год')
+    average_salary = models.IntegerField('Средняя З/П')
+    average_salary_web = models.IntegerField('Средняя З/П - Web-разработчик')
+    vacancies = models.IntegerField('Количество вакансий')
+    vacancies_web = models.IntegerField('Количество вакансий - Web-разработчик')
+
+    def __str__(self):
+        return str(self.year)
+
+    class Meta:
+        verbose_name = 'Год'
+        verbose_name_plural = 'Года'
+

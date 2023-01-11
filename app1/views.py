@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app1.models import Paragraph, DemandPage
+from app1.models import Paragraph, DemandPage, AnalyticsByYear
 
 
 def index_page(request):
@@ -11,7 +11,8 @@ def index_page(request):
 
 def demand_page(request):
     data = {
-        'paragraphs': DemandPage.objects.all()
+        'paragraphs': DemandPage.objects.all(),
+        'analytics': AnalyticsByYear.objects.all()
     }
     return render(request, 'demand.html', context=data)
 

@@ -39,7 +39,30 @@
                         {% if p.image.url|length > 0 %}
                             <img src="{{ p.image.url }}" alt="{{ p.title }}">
                         {% endif %}
-                    {% endfor %}                {% endblock %}
+                    {% endfor %}
+                <h2>Динамика уровня зарплат по годам</h2>
+                <table border="1">
+                    <tr>
+                        <th>Год</th>
+                        <th>Средняя З/П (руб.)</th>
+                        <th>Средняя З/П - Web-разработчик (руб.)</th>
+                    </tr>
+                    {% for row in analytics %}
+                        <tr><td>{{ row.year }}</td><td>{{ row.average_salary}}</td><td>{{ row.average_salary_web}}</td></tr>
+                    {% endfor %}
+                </table>
+                <h2>Динамика количества вакансий по годам</h2>
+                <table border="1">
+                <tr>
+                    <th>Год</th>
+                    <th>Количество вакансий</th>
+                    <th>Количество вакансий - Web-разработчик</th>
+                </tr>
+                    {% for row in analytics %}
+                        <tr><td>{{ row.year }}</td><td>{{ row.vacancies}}</td><td>{{ row.vacancies_web}}</td></tr>
+                    {% endfor %}
+                </table>
+                {% endblock %}
             </div>
         </div>
     </main>

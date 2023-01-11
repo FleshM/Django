@@ -39,3 +39,19 @@
     max-width: 100%;
     margin-bottom: 30px;
 }
+
+.main-content table {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: #2CA2FD;
+}
+
+.main-content th {
+    background: #2CA2FD;
+    color: white;
+    font-weight: 500;
+}
+
+.main-content td {
+    text-align: center;
+}
