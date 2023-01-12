@@ -31,7 +31,29 @@
         <div class="main-content">
             <div class="main-content__wrapper">
                 {% block content %}
-
+                    {% for p in paragraphs %}
+                        <h2>{{ p.title }}</h2>
+                        {% if p.text|length > 1 %}
+                            {{ p.text|safe }}
+                        {% endif %}
+                        {% if p.image.url|length > 0 %}
+                            <img src="{{ p.image.url }}" alt="{{ p.title }}">
+                        {% endif %}
+                    {% endfor %}
+                    {% for year in years %}
+                    <h2>{{ year }}</h2>
+                        <table border="1">
+                        <tr>
+                            <th>Навык</th>
+                            <th>Количество упоминаний</th>
+                        </tr>
+                            {% for skill in skills %}
+                                {% if skill.year == year %}
+                                    <tr><td>{{ skill.title }}</td><td>{{ skill.count }}</td></tr>
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                    {% endfor %}
                 {% endblock %}
             </div>
         </div>

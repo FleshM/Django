@@ -77,3 +77,40 @@ class VacanciesByCity(models.Model):
     class Meta:
         verbose_name = 'Город'
         verbose_name_plural = 'Города - Доля вакансий'
+
+
+class Skills(models.Model):
+    year = models.ForeignKey('Years', on_delete=models.PROTECT)
+    title = models.CharField('Название', max_length=50)
+    count = models.IntegerField('Количество упоминаний')
+
+    def __str__(self):
+        return str(self.year)
+
+    class Meta:
+        verbose_name = 'Навык'
+        verbose_name_plural = 'Навыки'
+
+
+class Years(models.Model):
+    year = models.IntegerField('Год')
+
+    def __str__(self):
+        return str(self.year)
+
+    class Meta:
+        verbose_name = 'Год'
+        verbose_name_plural = 'Года - Страница "Навыки"'
+
+
+class SkillsPage(models.Model):
+    title = models.CharField('Заголовок', max_length=50)
+    text = models.TextField('Текст', blank=True, null=True)
+    image = models.ImageField('Изображение', upload_to='images/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Параграф'
+        verbose_name_plural = 'Страница "Навыки"'

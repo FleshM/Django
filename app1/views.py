@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from app1.models import Paragraph, DemandPage, GeographyPage, AnalyticsByYear, SalaryByCity, VacanciesByCity
+from app1.models import Paragraph, DemandPage, GeographyPage, AnalyticsByYear, \
+    SalaryByCity, VacanciesByCity, Years, Skills, SkillsPage
 
 
 def index_page(request):
@@ -27,4 +28,9 @@ def geography_page(request):
 
 
 def skills_page(request):
-    return render(request, 'skills.html')
+    data = {
+        'paragraphs': SkillsPage.objects.all(),
+        'skills': Skills.objects.all(),
+        'years': Years.objects.all()
+    }
+    return render(request, 'skills.html', context=data)
