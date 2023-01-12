@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{% static "/css/main.css" %}" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-    <title>География</title>
+    <title>Навыки</title>
     <link rel="icon" type="image/png" sizes="16x16" href="{% static "img/favicon-16x16.png" %}">
 </head>
 <body>
@@ -24,42 +24,14 @@
         <ul class="navigation">
             <li class="visited"><a href="{% url 'index' %}">Главная</a></li>
             <li class="visited"><a href="{% url 'demand' %}">Востребованность</a></li>
-            <li class="current"><a href="{% url 'geography' %}">География</a></li>
-            <li><a href="{% url 'skills' %}">Навыки</a></li>
+            <li class="visited"><a href="{% url 'geography' %}">География</a></li>
+            <li class="current"><a href="{% url 'skills' %}">Навыки</a></li>
             <li><a href="">Последние вакансии</a></li>
         </ul>
         <div class="main-content">
             <div class="main-content__wrapper">
                 {% block content %}
-                    {% for p in paragraphs %}
-                        <h2>{{ p.title }}</h2>
-                        {% if p.text|length > 1 %}
-                            {{ p.text|safe }}
-                        {% endif %}
-                        {% if p.image.url|length > 0 %}
-                            <img src="{{ p.image.url }}" alt="{{ p.title }}">
-                        {% endif %}
-                    {% endfor %}
-                    <h2>Уровень зарплат по городам</h2>
-                    <table border="1">
-                        <tr>
-                            <th>Город</th>
-                            <th>Средняя З/П - Web-разработчик (руб.)</th>
-                        </tr>
-                        {% for row in salary_by_city %}
-                            <tr><td>{{ row.city }}</td><td>{{ row.average_salary}}</td></tr>
-                        {% endfor %}
-                    </table>
-                    <h2>Доля вакансий по городам</h2>
-                    <table border="1">
-                    <tr>
-                        <th>Город</th>
-                        <th>Количество вакансий - Web-разработчик (%)</th>
-                    </tr>
-                        {% for row in vacancies_by_city %}
-                            <tr><td>{{ row.city }}</td><td>{{ row.vacancies }}</td></tr>
-                        {% endfor %}
-                    </table>
+
                 {% endblock %}
             </div>
         </div>

@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', view.index_page, name='index'),
     path('demand/', view.demand_page, name='demand'),
-    path('geography/', view.geography_page, name='geography')
+    path('geography/', view.geography_page, name='geography'),
+    path('skills/', view.skills_page, name='skills'),
 ]
 
 if settings.DEBUG:

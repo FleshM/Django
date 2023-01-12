@@ -25,16 +25,14 @@
             <li class="current"><a href="{% url 'index' %}">Главная</a></li>
             <li><a href="{% url 'demand' %}">Востребованность</a></li>
             <li><a href="{% url 'geography' %}">География</a></li>
-            <li><a href="">Навыки</a></li>
+            <li><a href="{% url 'skills' %}">Навыки</a></li>
             <li><a href="">Последние вакансии</a></li>
         </ul>
         <div class="main-content">
             <div class="main-content__wrapper">
                {% block content %}
                     {% for p in paragraphs %}
-                        {% if p.title|length > 1 %}
-                            <h2>{{ p.title }}</h2>
-                        {% endif %}
+                        <h2>{{ p.title }}</h2>
                         {{ p.text|safe }}
                         {% if p.image.url|length > 0 %}
                             <img src="{{ p.image.url }}" alt="{{ p.title }}">
