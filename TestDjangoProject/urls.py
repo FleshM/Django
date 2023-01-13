@@ -25,6 +25,7 @@ urlpatterns = [
     path('demand/', view.demand_page, name='demand'),
     path('geography/', view.geography_page, name='geography'),
     path('skills/', view.skills_page, name='skills'),
+    path('vacancies/', view.vacancies_page, name='vacancies'),
 ]
 
 if settings.DEBUG:

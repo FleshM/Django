@@ -1,0 +1,55 @@
+.vacancies {
+    width: 100%;
+}
+
+.vacancies__wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.vacancies__vacancy {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #F9FBFE;
+    border-radius: 10px;
+}
+
+.vacancies__vacancy a{
+    color: black;
+    border-left: 4px solid #2CA2FD;
+    padding-left: 15px;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.vacancies__vacancy a:hover{
+    color: #2CA2FD;
+}
+
+.vacancies__vacancy p {
+    margin-bottom: 0;
+}
+
+.vacancies__company {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 19px;
+}
+
+.vacancies__salary {
+    margin-top: 15px;
+    padding-left: 19px;
+}
+
+.vacancies__city {
+    font-weight: 500;
+    margin-top: 25px;
+    padding-left: 19px;
+}
+
+.vacancies__time {
+    font-weight: 300;
+    text-align: end;
+}

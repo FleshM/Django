@@ -114,3 +114,15 @@ class SkillsPage(models.Model):
     class Meta:
         verbose_name = 'Параграф'
         verbose_name_plural = 'Страница "Навыки"'
+
+
+class VacanciesPage(models.Model):
+    title = models.CharField('Заголовок', max_length=50)
+    text = models.TextField('Текст', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Параграф'
+        verbose_name_plural = 'Страница "Последние вакансии"'

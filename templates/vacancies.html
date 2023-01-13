@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{% static "/css/main.css" %}" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-    <title>Навыки</title>
+    <title>Последние вакансии</title>
     <link rel="icon" type="image/png" sizes="16x16" href="{% static "img/favicon-16x16.png" %}">
 </head>
 <body>
@@ -25,35 +25,31 @@
             <li class="visited"><a href="{% url 'index' %}">Главная</a></li>
             <li class="visited"><a href="{% url 'demand' %}">Востребованность</a></li>
             <li class="visited"><a href="{% url 'geography' %}">География</a></li>
-            <li class="current"><a href="{% url 'skills' %}">Навыки</a></li>
-            <li><a href="{% url 'vacancies' %}">Последние вакансии</a></li>
+            <li class="visited"><a href="{% url 'skills' %}">Навыки</a></li>
+            <li class="current"><a href="{% url 'vacancies' %}">Последние вакансии</a></li>
         </ul>
         <div class="main-content">
             <div class="main-content__wrapper">
                 {% block content %}
-                    {% for p in paragraphs %}
+                     {% for p in paragraphs %}
                         <h2>{{ p.title }}</h2>
-                        {% if p.text|length > 1 %}
+                         {% if p.text|length > 0 %}
                             {{ p.text|safe }}
                         {% endif %}
-                        {% if p.image.url|length > 0 %}
-                            <img src="{{ p.image.url }}" alt="{{ p.title }}">
-                        {% endif %}
                     {% endfor %}
-                    {% for year in years %}
-                    <h2>{{ year }}</h2>
-                        <table border="1">
-                        <tr>
-                            <th>Навык</th>
-                            <th>Количество упоминаний</th>
-                        </tr>
-                            {% for skill in skills %}
-                                {% if skill.year == year %}
-                                    <tr><td>{{ skill.title }}</td><td>{{ skill.count }}</td></tr>
-                                {% endif %}
-                            {% endfor %}
-                        </table>
-                    {% endfor %}
+                    <ul class="vacancies">
+                        {% for vac in vacancies %}
+                        <li class="vacancies__vacancy">
+                            <div class="vacancies__wrapper">
+                                <a href="{{ vac.vac_url }}" target="_blank">{{ vac.name }}</a>
+                                <p class="vacancies__time">{{ vac.time }} {{ vac.date }}</p>
+                            </div>
+                            <p class="vacancies__salary">{{ vac.salary }}</p>
+                            <p class="vacancies__city">{{ vac.city }}</p>
+                            <p class="vacancies__company">{{ vac.company }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 {% endblock %}
             </div>
         </div>
